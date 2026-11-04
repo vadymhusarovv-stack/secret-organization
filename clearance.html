@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Відомості // Таємниці Світу</title>
+    <title>Відомості та Допуски // Таємниці Світу</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -53,15 +53,32 @@
         h1 {
             font-size: 2.2rem;
             color: #ffffff;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             text-align: center;
         }
+        .sub-header {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .section-divider {
+            color: #6b7280;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 8px;
+            margin: 40px 0 25px 0;
+        }
+        /* Блок 1: Системні рівні */
         .clearance-card {
             background: #111827;
             border: 1px solid #1f2937;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: border-color 0.2s;
         }
         .clearance-card:hover {
@@ -84,12 +101,60 @@
         .card-title {
             font-size: 1.2rem;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         .card-desc {
             font-size: 0.9rem;
             color: #9ca3af;
         }
+
+        /* Блок 2: Гілки військ */
+        .branch-section {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .branch-title {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rank-list {
+            list-style: none;
+        }
+        .rank-item {
+            padding: 6px 0;
+            border-bottom: 1px dashed #1f2937;
+            font-size: 0.88rem;
+            display: flex;
+            justify-content: space-between;
+            color: #9ca3af;
+        }
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+        .rank-num {
+            color: #3b82f6;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .rank-name {
+            color: #e5e7eb;
+        }
+        .special-roles {
+            border-color: #7c2d12;
+        }
+        .special-roles .rank-num {
+            color: #f87171;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -112,7 +177,11 @@
     </header>
 
     <main>
-        <h1>Рівні Допуску Оперативників</h1>
+        <h1>Відомості та Допуски</h1>
+        <div class="sub-header">[ ЗАСЕКРЕЧЕНА БАЗА ДАНИХ // КЛАСИФІКАЦІЯ КАДРІВ ]</div>
+
+        <!-- СЕКЦІЯ 1: Системні рівні -->
+        <div class="section-divider">01. Базові Системні Рівні</div>
 
         <div class="clearance-card">
             <span class="level-badge lvl-1">Level 1 // Basic</span>
@@ -123,7 +192,7 @@
         <div class="clearance-card">
             <span class="level-badge lvl-2">Level 2 // Restricted</span>
             <div class="card-title">Аналітик</div>
-            <div class="card-desc">Розширений доступ до журналів подій, локальних мереж та відкритих архівів аномальних дій.</div>
+            <div class="card-desc">Розширений доступ до журналів подій, локальних мереж та відкритихArchives аномальних дій.</div>
         </div>
 
         <div class="clearance-card">
@@ -137,10 +206,71 @@
             <div class="card-title">Адміністратор Полігону</div>
             <div class="card-desc">Повний доступ до ядра системи, протоколів перезапуску та засекречених архівів об'єкта.</div>
         </div>
+
+        <!-- СЕКЦІЯ 2: Військова структура -->
+        <div class="section-divider">02. Ієрархія Звань та Підрозділів</div>
+
+        <!-- Сухопутні війська -->
+        <div class="branch-section">
+            <div class="branch-title">Сухопутні війська <span>[GROUND FORCES]</span></div>
+            <ul class="rank-list">
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">1.</span> Генерал Армії</span><span>Рівень допуску: Максимальний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">2.</span> Генерал</span><span>Рівень допуску: Високий</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">3.</span> Генерал-лейтенант</span><span>Рівень допуску: Обмежений</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">4.</span> Генерал-майор</span><span>Рівень допуску: Стандартний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">5.</span> Бригадний генерал</span><span>Рівень допуску: Початковий</span></li>
+            </ul>
+        </div>
+
+        <!-- Повітряні сили -->
+        <div class="branch-section">
+            <div class="branch-title">Військово-Повітряні Сили <span>[AIR FORCE]</span></div>
+            <ul class="rank-list">
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">1.</span> Генерал Повітряних Сил</span><span>Рівень допуску: Максимальний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">2.</span> Генерал</span><span>Рівень допуску: Високий</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">3.</span> Генерал-лейтенант</span><span>Рівень допуску: Обмежений</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">4.</span> Генерал-майор</span><span>Рівень допуску: Стандартний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">5.</span> Бригадний генерал</span><span>Рівень допуску: Початковий</span></li>
+            </ul>
+        </div>
+
+        <!-- Флот -->
+        <div class="branch-section">
+            <div class="branch-title">Флот <span>[NAVY]</span></div>
+            <ul class="rank-list">
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">1.</span> Адмірал Флоту</span><span>Рівень допуску: Максимальний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">2.</span> Адмірал</span><span>Рівень допуску: Високий</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">3.</span> Віце-адмірал</span><span>Рівень допуску: Обмежений</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">4.</span> Контр-адмірал</span><span>Рівень допуску: Стандартний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">5.</span> Коммодор</span><span>Рівень допуску: Початковий</span></li>
+            </ul>
+        </div>
+
+        <!-- Морська піхота -->
+        <div class="branch-section">
+            <div class="branch-title">Морська піхота <span>[MARINES]</span></div>
+            <ul class="rank-list">
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">1.</span> Генерал</span><span>Рівень допуску: Максимальний</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">2.</span> Генерал-лейтенант</span><span>Рівень допуску: Високий</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">3.</span> Генерал-майор</span><span>Рівень допуску: Обмежений</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">4.</span> Бригадний генерал</span><span>Рівень допуску: Стандартний</span></li>
+            </ul>
+        </div>
+
+        <!-- Спецролі -->
+        <div class="branch-section special-roles">
+            <div class="branch-title" style="color: #f87171;">Спеціальні Ролі та Товариства <span>[SPECIAL ROLES]</span></div>
+            <ul class="rank-list">
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">01.</span> Заслужений учасник товариства Сталкерів</span><span>Статус: Привілейований</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">02.</span> Заслужений учасник товариства Хранителей тайн</span><span>Статус: Еліта об'єкта</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">03.</span> Заслужений учасник товариства Безпеки миру</span><span>Статус: Ключовий вузол</span></li>
+                <li class="rank-item"><span class="rank-name"><span class="rank-num">04.</span> Учасник угруповання гравців</span><span>Статус: Оперативник</span></li>
+            </ul>
+        </div>
     </main>
 
     <footer>
-        Рівень вашого поточного сеансу: Запит авторизації...
+        Авторизація підтверджена. Реєстр оновлено.
     </footer>
 
 </body>
