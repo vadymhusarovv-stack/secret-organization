@@ -6,29 +6,181 @@
     <title>Telegram // Таємниці Світу</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #0b0f19; color: #d1d5db; font-family: 'JetBrains Mono', monospace; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        header { background: #111827; border-bottom: 1px solid #1f2937; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; color: #f3f4f6; letter-spacing: 1px; }
-        nav a { color: #9ca3af; text-decoration: none; margin-left: 25px; font-size: 0.9rem; }
-        nav a:hover { color: #3b82f6; }
-        main { flex: 1; max-width: 800px; width: 100%; margin: 0 auto; padding: 50px 20px; text-align: center; }
-        h1 { font-size: 2rem; color: #ffffff; margin-bottom: 20px; }
-        .content-box { background: #111827; border: 1px solid #1f2937; padding: 30px; border-radius: 8px; margin-top: 20px; color: #9ca3af; }
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #4b5563; border-top: 1px solid #1f2937; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #3b82f6;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sub-header {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .tg-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .tg-card:hover {
+            border-color: #3b82f6;
+        }
+        .tg-info h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .tg-info p {
+            color: #9ca3af;
+            font-size: 0.88rem;
+        }
+        .tg-btn {
+            background: #1f2937;
+            color: #ffffff;
+            border: 1px solid #3b82f6;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .tg-btn:hover {
+            background: #3b82f6;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+        @media (max-width: 650px) {
+            .tg-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .tg-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">Організація</div>
-        <nav><a href="networks.html">← Назад до Хабу</a></nav>
+        <nav>
+            <a href="networks.html">← Повернутися до Хабу</a>
+        </nav>
     </header>
+
     <main>
-        <h1>Вузол зв'язку: Telegram</h1>
-        <div class="content-box">
-            <p>Список оперативних каналів та чатів організації у Telegram.</p>
+        <h1>Телеграм-Вузли Зв'язку</h1>
+        <div class="sub-header">[ 4 ОПЕРАТИВНІ КАНАЛИ ПЕРЕДАЧІ ДАНИХ ]</div>
+
+        <!-- Вузол 1 -->
+        <div class="tg-card">
+            <div class="tg-info">
+                <h3>01. Головний Канал Організації</h3>
+                <p>Основна стрічка сповіщень: офіційні новини, глобальні оголошення та ключові події проєкту.</p>
+            </div>
+            <!-- Сюди вставиш лінк на 1-й канал -->
+            <a href="https://t.me/+eWxBmnhXoJRlZjZi" target="_blank" class="tg-btn">ПІДКЛЮЧИТИСЯ</a>
         </div>
+
+        <!-- Вузол 2 -->
+        <div class="tg-card">
+            <div class="tg-info">
+                <h3>02. Канал Запитань та Фідбеку</h3>
+                <p>Прямий зв'язок з адміністрацією для оперативного вирішення технічних та організаційних питань.</p>
+            </div>
+            <!-- Сюди вставиш лінк на 2-й канал -->
+            <a href="https://t.me/+kZ5q_wOiP7I1ZGQy" target="_blank" class="tg-btn">ПІДКЛЮЧИТИСЯ</a>
+        </div>
+
+        <!-- Вузол 3 -->
+        <div class="tg-card">
+            <div class="tg-info">
+                <h3>03. Загальний Чат Розмов</h3>
+                <p>Неформальний вузол для спілкування оперативників, обговорення лору та координування дій.</p>
+            </div>
+            <!-- Сюди вставиш лінк на 3-й канал -->
+            <a href="https://t.me/+OOVEKdHepw4zYzUy" target="_blank" class="tg-btn">ПІДКЛЮЧИТИСЯ</a>
+        </div>
+
+        <!-- Вузол 4 -->
+        <div class="tg-card">
+            <div class="tg-info">
+                <h3>04. Вузол Завдань та Квестів</h3>
+                <p>Засекречені доручення, оперативні місії, челенджі та завдання для підвищення рівня допуску.</p>
+            </div>
+            <!-- Сюди вставиш лінк на 4-й канал -->
+            <a href="https://t.me/+BM0DfvF8owphNWMy" target="_blank" class="tg-btn">ПІДКЛЮЧИТИСЯ</a>
+        </div>
+
     </main>
-    <footer>Захищений термінал Telegram.</footer>
+
+    <footer>
+        Шифрування за протоколом TG-Sec-4. Всі канали активні.
+    </footer>
+
 </body>
 </html>
