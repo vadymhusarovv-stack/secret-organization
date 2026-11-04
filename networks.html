@@ -72,26 +72,44 @@
             border-bottom: 1px solid #1f2937;
             padding-bottom: 5px;
         }
-        .grid-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+        .network-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: border-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .network-card:hover {
+            border-color: #3b82f6;
+        }
+        .network-info h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .network-info p {
+            color: #9ca3af;
+            font-size: 0.85rem;
         }
         .btn {
-            background: #111827;
+            background: #1f2937;
             color: #e5e7eb;
             border: 1px solid #374151;
-            padding: 15px 20px;
+            padding: 10px 20px;
             text-align: center;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            white-space: nowrap;
             transition: all 0.2s;
-            display: block;
         }
         .btn:hover {
-            background: #1f2937;
+            background: #3b82f6;
             border-color: #3b82f6;
             color: #ffffff;
         }
@@ -101,6 +119,15 @@
             font-size: 0.8rem;
             color: #4b5563;
             border-top: 1px solid #1f2937;
+        }
+        @media (max-width: 600px) {
+            .network-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -118,18 +145,37 @@
 
     <main>
         <h1>Мережевий Хаб</h1>
-        <div class="sub-header">[ КАНАЛИ ЗВ'ЯЗКУ ТА ЗОВНІШНІ ВУЗЛИ ]</div>
+        <div class="sub-header">[ ЗОВНІШНІ КАНАЛИ ТА РЕЗЕРВНІ ЧАСТОТИ ]</div>
 
-        <div class="section-title">Доступні платформи зв'язку</div>
-        <div class="grid-buttons">
-            <a href="steam.html" class="btn">Канал Steam</a>
-            <a href="telegram.html" class="btn">Телеграм-канали</a>
-            <a href="viber.html" class="btn">Вайбер-група</a>
+        <div class="section-title">Активні з'єднання</div>
+
+        <div class="network-card">
+            <div class="network-info">
+                <h3>Канал Steam</h3>
+                <p>Спеціалізована група учасників для відпочинку та позаштатних операцій.</p>
+            </div>
+            <a href="steam.html" class="btn">Перейти до Steam</a>
+        </div>
+
+        <div class="network-card">
+            <div class="network-info">
+                <h3>Телеграм-канали (4 вузли)</h3>
+                <p>Основні оперативні зведення, термінові новини та поточні завдання організації.</p>
+            </div>
+            <a href="telegram.html" class="btn">Перейти до Telegram</a>
+        </div>
+
+        <div class="network-card">
+            <div class="network-info">
+                <h3>Вайбер-групи (2 чати)</h3>
+                <p>Дублюючі канали зв'язку для новин та завдань (резервний частотний діапазон).</p>
+            </div>
+            <a href="viber.html" class="btn">Перейти до Viber</a>
         </div>
     </main>
 
     <footer>
-        Мережевий шлюз маршрутизації активний.
+        Маршрутизація вузлів активна. Моніторинг захищено.
     </footer>
 
 </body>
