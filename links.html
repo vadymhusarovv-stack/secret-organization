@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Посилання // Таємниці Світу</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+        nav a:hover, nav a.active {
+            color: #3b82f6;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .intro-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 40px;
+            background: #111827;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #1f2937;
+        }
+        .grid-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: #111827;
+            color: #e5e7eb;
+            border: 1px solid #374151;
+            padding: 12px 20px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            background: #1f2937;
+            border-color: #3b82f6;
+            color: #ffffff;
+        }
+        .section-title {
+            font-size: 1rem;
+            color: #6b7280;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 5px;
+        }
+        .warning-footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #ef4444;
+            font-weight: 700;
+        }
+        .top-secret-stamp {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            border: 3px solid #ef4444;
+            color: #ef4444;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 5px 15px;
+            transform: rotate(-10deg);
+            opacity: 0.8;
+            letter-spacing: 2px;
+            pointer-events: none;
+            text-transform: uppercase;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Організація</div>
+        <nav>
+            <a href="index.html">Головна Сторінка</a>
+            <a href="links.html" class="active">Посилання</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Посилання</h1>
+        
+        <div class="intro-text">
+            Якщо ви бажаєте підвищити свій рівень допуску або отримати доступ до інформації, скористайтесь посиланнями нижче.
+        </div>
+
+        <div class="grid-buttons">
+            <a href="#" class="btn">Доступ до файлів</a>
+            <a href="#" class="btn">Підвищення рівня допуску</a>
+        </div>
+
+        <div class="section-title">Нові сайти</div>
+        <div class="grid-buttons">
+            <a href="#" class="btn">Мережі 1</a>
+        </div>
+
+        <div class="section-title">У розробці</div>
+        <div class="grid-buttons">
+            <a href="#" class="btn">Архів</a>
+        </div>
+
+        <div class="section-title">Підтримка</div>
+        <div class="grid-buttons">
+            <a href="#" class="btn">Steam</a>
+            <a href="#" class="btn">Наші телеграм канали</a>
+            <a href="#" class="btn">Вайбер</a>
+        </div>
+
+        <div class="warning-footer">
+            Нікому не розповідайте про те що тут побачили
+        </div>
+
+        <div class="top-secret-stamp">Top Secret</div>
+    </main>
+
+    <footer>
+        Захищений вузол зв'язку №42.
+    </footer>
+
+</body>
+</html>
