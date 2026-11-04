@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram // Таємниці Світу</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: #0b0f19;
             color: #d1d5db;
@@ -20,6 +23,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
             background: #111827;
             border-bottom: 1px solid #1f2937;
@@ -28,11 +32,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-weight: 700;
             color: #f3f4f6;
             letter-spacing: 1px;
         }
+
         nav a {
             color: #9ca3af;
             text-decoration: none;
@@ -40,9 +46,11 @@
             font-size: 0.9rem;
             transition: color 0.2s;
         }
+
         nav a:hover {
             color: #3b82f6;
         }
+
         main {
             flex: 1;
             max-width: 900px;
@@ -50,12 +58,14 @@
             margin: 0 auto;
             padding: 50px 20px;
         }
+
         h1 {
             font-size: 2.2rem;
             color: #ffffff;
             margin-bottom: 10px;
             text-align: center;
         }
+
         .sub-header {
             text-align: center;
             color: #3b82f6;
@@ -63,6 +73,7 @@
             margin-bottom: 40px;
             letter-spacing: 1px;
         }
+
         .tg-card {
             background: #111827;
             border: 1px solid #1f2937;
@@ -75,18 +86,22 @@
             align-items: center;
             gap: 20px;
         }
+
         .tg-card:hover {
             border-color: #3b82f6;
         }
+
         .tg-info h3 {
             color: #ffffff;
             font-size: 1.1rem;
             margin-bottom: 6px;
         }
+
         .tg-info p {
             color: #9ca3af;
             font-size: 0.88rem;
         }
+
         .tg-btn {
             background: #1f2937;
             color: #ffffff;
@@ -99,11 +114,13 @@
             white-space: nowrap;
             transition: all 0.2s ease;
         }
+
         .tg-btn:hover {
             background: #3b82f6;
             box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
             transform: translateY(-2px);
         }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -111,11 +128,13 @@
             color: #4b5563;
             border-top: 1px solid #1f2937;
         }
+
         @media (max-width: 650px) {
             .tg-card {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .tg-btn {
                 width: 100%;
                 text-align: center;
@@ -123,6 +142,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -183,4 +203,5 @@
     </footer>
 
 </body>
+
 </html>
