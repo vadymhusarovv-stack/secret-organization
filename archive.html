@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архів // Таємниці Світу</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+        nav a:hover, nav a.active {
+            color: #3b82f6;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sub-header {
+            text-align: center;
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .file-list {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #1f2937;
+            transition: background 0.2s;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-item:hover {
+            background: #1f2937;
+        }
+        .file-name {
+            color: #e5e7eb;
+            font-size: 0.95rem;
+        }
+        .file-status {
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .status-ok { background: #065f46; color: #a7f3d0; }
+        .status-locked { background: #7f1d1d; color: #fecaca; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Організація</div>
+        <nav>
+            <a href="index.html">Головна Сторінка</a>
+            <a href="links.html">Посилання</a>
+            <a href="clearance.html">Відомості</a>
+            <a href="archive.html" class="active">Архів</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Засекречений Архів</h1>
+        <div class="sub-header">[ RESTRICTED AREA // ACCESS LOGGED ]</div>
+
+        <div class="file-list">
+            <div class="file-item">
+                <span class="file-name">📁 FILE_001_PROTOCOLS.LOG</span>
+                <span class="file-status status-ok">ДОСТУПНО</span>
+            </div>
+            <div class="file-item">
+                <span class="file-name">📁 FILE_042_SUPER_SERVER_HISTORY.DAT</span>
+                <span class="file-status status-ok">ДОСТУПНО</span>
+            </div>
+            <div class="file-item">
+                <span class="file-name">🔒 FILE_108_ANOMALY_SUBJECTS.ENC</span>
+                <span class="file-status status-locked">ЗАБЛОКОВАНО</span>
+            </div>
+            <div class="file-item">
+                <span class="file-name">🔒 FILE_999_CORE_SYSTEM_KEY.RAW</span>
+                <span class="file-status status-locked">ЗАБЛОКОВАНО</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Архів підключено до центрального вузла.
+    </footer>
+
+</body>
+</html>
