@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відомості // Таємниці Світу</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+        nav a:hover, nav a.active {
+            color: #3b82f6;
+        }
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .clearance-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+        .clearance-card:hover {
+            border-color: #3b82f6;
+        }
+        .level-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .lvl-1 { background: #065f46; color: #a7f3d0; }
+        .lvl-2 { background: #1e40af; color: #bfdbfe; }
+        .lvl-3 { background: #92400e; color: #fde68a; }
+        .lvl-4 { background: #991b1b; color: #fecaca; }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .card-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Організація</div>
+        <nav>
+            <a href="index.html">Головна Сторінка</a>
+            <a href="links.html">Посилання</a>
+            <a href="clearance.html" class="active">Відомості</a>
+            <a href="archive.html">Архів</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Рівні Допуску Оперативників</h1>
+
+        <div class="clearance-card">
+            <span class="level-badge lvl-1">Level 1 // Basic</span>
+            <div class="card-title">Спостерігач</div>
+            <div class="card-desc">Початковий доступ. Дозволяє переглядати публічні протоколи та загальну інформацію про діяльність структури.</div>
+        </div>
+
+        <div class="clearance-card">
+            <span class="level-badge lvl-2">Level 2 // Restricted</span>
+            <div class="card-title">Аналітик</div>
+            <div class="card-desc">Розширений доступ до журналів подій, локальних мереж та відкритих архівів аномальних дій.</div>
+        </div>
+
+        <div class="clearance-card">
+            <span class="level-badge lvl-3">Level 3 // Confidential</span>
+            <div class="card-title">Спеціаліст безпеки</div>
+            <div class="card-desc">Доступ до внутрішніх інструментів, керування вузлами зв'язку та закритих звітів розвідки.</div>
+        </div>
+
+        <div class="clearance-card">
+            <span class="level-badge lvl-4">Level 4 // Top Secret</span>
+            <div class="card-title">Адміністратор Полігону</div>
+            <div class="card-desc">Повний доступ до ядра системи, протоколів перезапуску та засекречених архівів об'єкта.</div>
+        </div>
+    </main>
+
+    <footer>
+        Рівень вашого поточного сеансу: Запит авторизації...
+    </footer>
+
+</body>
+</html>
