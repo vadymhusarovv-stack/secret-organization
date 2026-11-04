@@ -6,29 +6,126 @@
     <title>Steam // Таємниці Світу</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #0b0f19; color: #d1d5db; font-family: 'JetBrains Mono', monospace; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        header { background: #111827; border-bottom: 1px solid #1f2937; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; color: #f3f4f6; letter-spacing: 1px; }
-        nav a { color: #9ca3af; text-decoration: none; margin-left: 25px; font-size: 0.9rem; }
-        nav a:hover { color: #3b82f6; }
-        main { flex: 1; max-width: 800px; width: 100%; margin: 0 auto; padding: 50px 20px; text-align: center; }
-        h1 { font-size: 2rem; color: #ffffff; margin-bottom: 20px; }
-        .content-box { background: #111827; border: 1px solid #1f2937; padding: 30px; border-radius: 8px; margin-top: 20px; color: #9ca3af; }
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #4b5563; border-top: 1px solid #1f2937; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #3b82f6;
+        }
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .sub-header {
+            color: #3b82f6;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .content-box {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .content-box p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+        /* Стильна кнопка підключення */
+        .steam-btn {
+            display: inline-block;
+            background: #1f2937;
+            color: #ffffff;
+            border: 1px solid #3b82f6;
+            padding: 15px 35px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+        .steam-btn:hover {
+            background: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">Організація</div>
-        <nav><a href="networks.html">← Назад до Хабу</a></nav>
+        <nav>
+            <a href="networks.html">← Повернутися до Хабу</a>
+        </nav>
     </header>
+
     <main>
-        <h1>Вузол зв'язку: Steam</h1>
+        <h1>Канал Steam</h1>
+        <div class="sub-header">[ ЗОВНІШНІЙ ВУЗОЛ СПІЛЬНОТИ ]</div>
+
         <div class="content-box">
-            <p>Тут буде розміщено інформацію, посилання та спеціальні протоколи для платформи Steam.</p>
+            <p>Спеціалізована група учасників організації для позаштатного відпочинку, координації та ігрових сесій.</p>
+            
+            <!-- Сюди вставиш своє посилання замість href="#" -->
+            <a href="https://steamcommunity.com/chat/invite/dcKFmrae" target="_blank" class="steam-btn">ПІДКЛЮЧИТИСЯ ДО STEAM-ГРУПИ</a>
         </div>
     </main>
-    <footer>Захищений термінал Steam.</footer>
+
+    <footer>
+        Захищений термінал Steam. З'єднання стабільне.
+    </footer>
+
 </body>
 </html>
