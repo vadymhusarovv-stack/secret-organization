@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бази організації // Таємниці Світу</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #3b82f6;
+        }
+
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sub-header {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .base-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .base-card:hover {
+            border-color: #3b82f6;
+            background: #161f33;
+        }
+
+        .base-info h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .base-info p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .base-meta {
+            font-size: 0.78rem;
+            display: flex;
+            gap: 15px;
+            color: #6b7280;
+            text-transform: uppercase;
+        }
+
+        .base-meta span strong {
+            color: #3b82f6;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .st-active {
+            background: #065f46;
+            color: #a7f3d0;
+            border: 1px solid #059669;
+        }
+
+        .st-danger {
+            background: #7f1d1d;
+            color: #fecaca;
+            border: 1px solid #dc2626;
+        }
+
+        .st-hidden {
+            background: #374151;
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+
+        @media (max-width: 650px) {
+            .base-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Організація</div>
+        <nav>
+            <a href="index.html">Головна Сторінка</a>
+            <a href="links.html">Посилання</a>
+            <a href="clearance.html">Відомості</a>
+            <a href="archive.html">Архів</a>
+            <a href="bases.html" class="active">Бази</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Мережа Стратегічних Баз</h1>
+        <div class="sub-header">[ ЗАСЕКРЕЧЕНІ ОБ'ЄКТИ ТА АВАНПОСТИ ОРГАНІЗАЦІЇ ]</div>
+
+        <!-- Об'єкт 1 (Доступно з Level 1) -->
+        <div class="base-card" onclick="openBaseDetails('BASE_01', 1)">
+            <div class="base-info">
+                <h3>Об'єкт-01 // Центральний Бункер Ядра</h3>
+                <p>Головний координаційний центр організації. Звідси здійснюється управління протоколами безпеки та
+                    розподіл завдань.</p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Альфа</strong></span>
+                    <span>Допуск: <strong>Level 1+</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-active">АКТИВНИЙ</span>
+        </div>
+
+        <!-- Об'єкт 2 (Доступно з Level 2) -->
+        <div class="base-card" onclick="openBaseDetails('BASE_12', 2)">
+            <div class="base-info">
+                <h3>Об'єкт-12 // Дослідний Полігон Аномалій</h3>
+                <p>Віддалена наукова станція. Проводяться польові випробування захисного обладнання та сканування
+                    простору.</p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Бета (Зона)</strong></span>
+                    <span>Допуск: <strong>Level 2+</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-danger">ПІД ЗАГРОЗОЮ</span>
+        </div>
+
+        <!-- Об'єкт 3 (Доступно тільки з Level 4) -->
+        <div class="base-card" onclick="openBaseDetails('BASE_42', 4)">
+            <div class="base-info">
+                <h3>Об'єкт-42 // Резервний Вузол зв'язку</h3>
+                <p>Законсервований об'єкт глибокого занурення. Використовується для екстреного дублювання каналів та
+                    шифрів.</p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Омега</strong></span>
+                    <span>Допуск: <strong>Level 4</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-hidden">ЗАКОНСЕРВОВАНО</span>
+        </div>
+
+    </main>
+
+    <!-- Модальне вікно для перегляду бази даних та фото -->
+    <div id="base-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(6px); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+        <div
+            style="background: #111827; border: 1px solid #3b82f6; width: 100%; max-width: 650px; border-radius: 8px; padding: 30px; box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);">
+            <div id="modal-base-title"
+                style="color: #ffffff; font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+            </div>
+            <div id="modal-base-content"
+                style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; max-height: 400px; overflow-y: auto; margin-bottom: 25px; background: #0b0f19; padding: 15px; border-radius: 6px; border: 1px solid #1f2937;">
+            </div>
+            <button onclick="closeBaseModal()"
+                style="background: #1f2937; color: #ffffff; border: 1px solid #3b82f6; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 700;">ЗАКРИТИ
+                ТЕРМІНАЛ</button>
+        </div>
+    </div>
+
+    <footer>
+        Глобальна система моніторингу баз активна. Передачу даних захищено.
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        // База даних інформації про об'єкти та фотографії
+        const BASES_DATABASE = {
+            "BASE_01": {
+                title: "ОБ'ЄКТ-01 // ЦЕНТРАЛЬНИЙ БУНКЕР",
+                text: "Координаційний центр організації. Забезпечує стабільність каналів зв'язку та моніторинг активності всіх оперативників у реальному часі.",
+                image: "images/base_01.png" // Заміниш на своє фото, коли з'явиться
+            },
+            "BASE_12": {
+                title: "ОБ'ЄКТ-12 // ПОЛІГОН АНОМАЛІЙ",
+                text: "Секретний науковий аванпост. Зафіксовано високий рівень енергетичних коливань. Доступ дозволено лише перевіреним аналітикам.",
+                image: "images/base_12.png"
+            },
+            "BASE_42": {
+                title: "ОБ'ЄКТ-42 // РЕЗЕРВНИЙ БУНКЕР ОМЕГА",
+                text: "Генеральний секретний об'єкт вищого командування. Містить автономні сервери з повними архівами та кодами екстреного перезапуску мережі.",
+                image: "images/base_42.png"
+            }
+        };
+
+        function openBaseDetails(baseId, requiredLevel) {
+            const userLevel = parseInt(localStorage.getItem("tc_user_level") || "1");
+
+            if (userLevel >= requiredLevel) {
+                const base = BASES_DATABASE[baseId];
+                document.getElementById("modal-base-title").textContent = `🏢 ЗВІТ ОБ'ЄКТУ // ${base.title}`;
+                document.getElementById("modal-base-content").innerHTML = `
+                    <p style="margin-bottom: 15px;">${base.text}</p>
+                    <div style="text-align: center;">
+                        <img src="${base.image}" alt="Секретний об'єкт" style="max-width: 100%; max-height: 250px; border-radius: 4px; border: 1px solid #3b82f6;" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<span style=\'color: #ef4444;\'>[МЕРЕЖЕВА ПОМИЛКА]: Візуальний файл об\'єкта завантажується з резервного носія.</span>';">
+                    </div>
+                `;
+                document.getElementById("base-modal").style.display = "flex";
+            } else {
+                alert(`[ПОМИЛКА БЕЗПЕКИ]: Доступ до об'єкта заблоковано!\nПотрібен мінімальний рівень допуску: Level ${requiredLevel}.\nВаш поточний рівень: Level ${userLevel}.`);
+            }
+        }
+
+        function closeBaseModal() {
+            document.getElementById("base-modal").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

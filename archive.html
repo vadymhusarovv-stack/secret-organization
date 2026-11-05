@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: #0b0f19;
             color: #d1d5db;
@@ -21,6 +23,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
             background: #111827;
             border-bottom: 1px solid #1f2937;
@@ -29,11 +32,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-weight: 700;
             color: #f3f4f6;
             letter-spacing: 1px;
         }
+
         nav a {
             color: #9ca3af;
             text-decoration: none;
@@ -41,9 +46,12 @@
             transition: color 0.2s;
             font-size: 0.9rem;
         }
-        nav a:hover, nav a.active {
+
+        nav a:hover,
+        nav a.active {
             color: #3b82f6;
         }
+
         main {
             flex: 1;
             max-width: 900px;
@@ -51,12 +59,14 @@
             margin: 0 auto;
             padding: 50px 20px;
         }
+
         h1 {
             font-size: 2.2rem;
             color: #ffffff;
             margin-bottom: 10px;
             text-align: center;
         }
+
         .sub-header {
             text-align: center;
             color: #ef4444;
@@ -64,12 +74,14 @@
             margin-bottom: 40px;
             letter-spacing: 1px;
         }
+
         .file-list {
             background: #111827;
             border: 1px solid #1f2937;
             border-radius: 8px;
             overflow: hidden;
         }
+
         .file-item {
             display: flex;
             justify-content: space-between;
@@ -78,23 +90,35 @@
             border-bottom: 1px solid #1f2937;
             transition: background 0.2s;
         }
+
         .file-item:last-child {
             border-bottom: none;
         }
+
         .file-item:hover {
             background: #1f2937;
         }
+
         .file-name {
             color: #e5e7eb;
             font-size: 0.95rem;
         }
+
         .file-status {
             font-size: 0.8rem;
             padding: 3px 8px;
             border-radius: 4px;
         }
-        .status-ok { background: #065f46; color: #a7f3d0; }
-        .status-locked { background: #7f1d1d; color: #fecaca; }
+
+        .status-ok {
+            background: #065f46;
+            color: #a7f3d0;
+        }
+
+        .status-locked {
+            background: #7f1d1d;
+            color: #fecaca;
+        }
 
         footer {
             text-align: center;
@@ -105,6 +129,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -114,6 +139,7 @@
             <a href="links.html">Посилання</a>
             <a href="clearance.html">Відомості</a>
             <a href="archive.html" class="active">Архів</a>
+            <a href="bases.html">Бази</a>
         </nav>
     </header>
 
@@ -122,22 +148,48 @@
         <div class="sub-header">[ RESTRICTED AREA // ACCESS LOGGED ]</div>
 
         <div class="file-list">
-            <div class="file-item">
+            <!-- Рівень 1: Доступно всім (навіть гостям) -->
+            <div class="file-item" data-level="1" onclick="openFile('FILE_001_PROTOCOLS.LOG', 1)">
                 <span class="file-name">📁 FILE_001_PROTOCOLS.LOG</span>
-                <span class="file-status status-ok">ДОСТУПНО</span>
+                <span class="file-status status-ok">ДОСТУПНО (Level 1)</span>
             </div>
-            <div class="file-item">
+
+            <!-- Рівень 2: Тільки для вищого командування (Level 2+) -->
+            <div class="file-item" data-level="2" onclick="openFile('FILE_042_ANOMALY_PHOTO.JPG', 2)">
+                <span class="file-name">📁 FILE_042_ANOMALY_PHOTO.JPG</span>
+                <span class="file-status status-ok">ДОСТУПНО (Level 2)</span>
+            </div>
+
+            <!-- Рівень 2: Потрібен Level 2+ -->
+            <div class="file-item" data-level="2" onclick="openFile('FILE_042_SUPER_SERVER_HISTORY.DAT', 2)">
                 <span class="file-name">📁 FILE_042_SUPER_SERVER_HISTORY.DAT</span>
-                <span class="file-status status-ok">ДОСТУПНО</span>
+                <span class="file-status status-ok">ДОСТУПНО (Level 2)</span>
             </div>
-            <div class="file-item">
+
+            <!-- Рівень 3: Потрібен Level 3+ -->
+            <div class="file-item" data-level="3" onclick="openFile('FILE_108_ANOMALY_SUBJECTS.ENC', 3)">
                 <span class="file-name">🔒 FILE_108_ANOMALY_SUBJECTS.ENC</span>
-                <span class="file-status status-locked">ЗАБЛОКОВАНО</span>
+                <span class="file-status status-locked">ПОТРІБЕН LEVEL 3</span>
             </div>
-            <div class="file-item">
+
+            <!-- Рівень 4: Тільки для вищого командування (Level 4) -->
+            <div class="file-item" data-level="4" onclick="openFile('FILE_999_CORE_SYSTEM_KEY.RAW', 4)">
                 <span class="file-name">🔒 FILE_999_CORE_SYSTEM_KEY.RAW</span>
-                <span class="file-status status-locked">ЗАБЛОКОВАНО</span>
+                <span class="file-status status-locked">ПОТРІБЕН LEVEL 4</span>
             </div>
+
+            <!-- Рівень 4: Тільки для вищого командування (Level 4) -->
+            <div class="file-item" data-level="4" onclick="openFile('FILE_108_SECRET_DOC.PDF', 4)">
+                <span class="file-name">🔒 FILE_108_SECRET_DOC.PDF</span>
+                <span class="file-status status-locked">ПОТРІБЕН LEVEL 4</span>
+            </div>
+
+            <!-- Рівень 4: Тільки для вищого командування (Level 4) -->
+            <div class="file-item" data-level="4" onclick="openFile('FILE_109_SECRET_DOC.HTML', 4)">
+                <span class="file-name">🔒 FILE_109_SECRET_DOC.HTML</span>
+                <span class="file-status status-locked">ПОТРІБЕН LEVEL 4</span>
+            </div>
+
         </div>
     </main>
 
@@ -145,5 +197,25 @@
         Архів підключено до центрального вузла.
     </footer>
 
+    <script src="auth.js"></script>
+
+    <!-- Модальне вікно для читання файлів -->
+    <div id="file-reader-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(6px); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+        <div
+            style="background: #111827; border: 1px solid #3b82f6; width: 100%; max-width: 650px; border-radius: 8px; padding: 30px; box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); font-family: 'JetBrains Mono', monospace;">
+            <div id="modal-file-title"
+                style="color: #ffffff; font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; border-bottom: 1px solid #1f2937; padding-bottom: 10px;">
+            </div>
+            <div id="modal-file-content"
+                style="color: #9ca3af; font-size: 0.9rem; line-height: 1.6; max-height: 350px; overflow-y: auto; margin-bottom: 25px; background: #0b0f19; padding: 15px; border-radius: 6px; border: 1px solid #1f2937;">
+            </div>
+            <button onclick="closeFileReader()"
+                style="background: #1f2937; color: #ffffff; border: 1px solid #3b82f6; padding: 10px 25px; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 700; transition: all 0.2s;">ЗАКРИТИ
+                ФАЙЛ</button>
+        </div>
+    </div>
+
 </body>
+
 </html>

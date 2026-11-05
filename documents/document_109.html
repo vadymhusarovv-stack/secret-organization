@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Термінал Ядра // Level 4 Top Secret</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #050811;
+            color: #10b981;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .terminal-window {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: #090d16;
+            border: 1px solid #059669;
+            border-radius: 8px;
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #064e3b;
+            color: #a7f3d0;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #059669;
+        }
+
+        .terminal-body {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            max-height: 70vh;
+            background: rgba(5, 8, 17, 0.95);
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+        }
+
+        .log-warn {
+            color: #f59e0b;
+        }
+
+        .log-danger {
+            color: #ef4444;
+        }
+
+        .log-info {
+            color: #60a5fa;
+        }
+
+        .log-success {
+            color: #10b981;
+        }
+
+        .cmd-line {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .cmd-prompt {
+            color: #059669;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .cmd-input {
+            background: transparent;
+            border: none;
+            color: #10b981;
+            font-family: inherit;
+            font-size: 0.9rem;
+            width: 100%;
+            outline: none;
+        }
+
+        .top-secret-stamp {
+            border: 2px dashed #ef4444;
+            color: #ef4444;
+            padding: 10px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: #059669;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <span>[ SYSTEM CORE TERMINAL // LEVEL 4 AUTHORIZED ]</span>
+            <nav><a href="../archive.html">← ВИХІД В АРХІВ</a></nav>
+        </div>
+
+        <div class="terminal-body" id="term-body">
+            <div class="top-secret-stamp">
+                ⚠️ УВАГА: ДОСТУП РІВНЯ TOP SECRET // ВУЗОЛ ЯДРА №0-999 ⚠️
+            </div>
+
+            <div class="log-entry log-info">[SYSTEM]: Ініціалізація консолі ядра... Успішно.</div>
+            <div class="log-entry log-success">[AUTH]: Позивиний підтверджено. Права допуску: LEVEL 4 (Адміністратор).
+            </div>
+            <div class="log-entry log-warn">[STATUS]: Виявлено 3 неідентифіковані підключення у резервному діапазоні.
+            </div>
+            <div class="log-entry">[HINT]: Наберіть <span style="color:#ffffff;">help</span> для списку команд ядра.
+            </div>
+
+            <div id="logs-container"></div>
+
+            <div class="cmd-line">
+                <span class="cmd-prompt">core@tc-root:~#</span>
+                <input type="text" id="command-input" class="cmd-input" autofocus autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <script src="../auth.js"></script>
+    <script>
+        // Захист сторінки: якщо рівень менше 4 — виганяємо в архів!
+        document.addEventListener("DOMContentLoaded", () => {
+            const userLevel = parseInt(localStorage.getItem("tc_user_level") || "1");
+            if (userLevel < 4) {
+                alert("[ПОМИЛКА БЕЗПЕКИ]: Недостатньо прав для доступу до Ядра! Потрібен Level 4.");
+                window.location.href = "archive.html";
+            }
+        });
+
+        const input = document.getElementById("command-input");
+        const logsContainer = document.getElementById("logs-container");
+        const termBody = document.getElementById("term-body");
+
+        // Інтерактивні команди для термінала
+        const COMMANDS = {
+            "help": "Доступні команди ядра:<br>- <b>status</b>: Стан аномальних секцій<br>- <b>logs</b>: Переглянути останні перехоплені пакети<br>- <b>clear</b>: Очистити консоль<br>- <b>override</b>: Спроба перезапуску захисного периметра",
+            "status": "<span class='log-success'>Сектор A: Норма</span><br><span class='log-warn'>Сектор B: Аномальні коливання частот</span><br><span class='log-danger'>Сектор C: Втрачено зв'язок з автономним ботом</span>",
+            "logs": "<span class='log-info'>[10:42:01] Packet received from Telegram_Node_04</span><br><span class='log-info'>[10:43:15] User 'Vadym' executed Level 4 protocol.</span>",
+            "override": "<span class='log-danger'>[ALERT]: Спроба перевизначення ядра... Необхідний фізичний ключ допуску з полигонних випробувань!</span>"
+        };
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const cmd = input.value.trim().toLowerCase();
+                input.value = "";
+
+                if (!cmd) return;
+
+                // Додаємо введену команду
+                const cmdLog = document.createElement("div");
+                cmdLog.className = "log-entry";
+                cmdLog.innerHTML = `<span style="color:#059669;">core@tc-root:~#</span> ${cmd}`;
+                logsContainer.appendChild(cmdLog);
+
+                if (cmd === "clear") {
+                    logsContainer.innerHTML = "";
+                } else if (COMMANDS[cmd]) {
+                    const resLog = document.createElement("div");
+                    resLog.className = "log-entry";
+                    resLog.innerHTML = COMMANDS[cmd];
+                    logsContainer.appendChild(resLog);
+                } else {
+                    const errLog = document.createElement("div");
+                    errLog.className = "log-entry log-danger";
+                    errLog.textContent = `[ERROR]: Команду '${cmd}' не розпізнано. Введіть 'help'.`;
+                    logsContainer.appendChild(errLog);
+                }
+
+                termBody.scrollTop = termBody.scrollHeight;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: #0b0f19;
             color: #d1d5db;
@@ -21,6 +23,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
             background: #111827;
             border-bottom: 1px solid #1f2937;
@@ -29,11 +32,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-weight: 700;
             color: #f3f4f6;
             letter-spacing: 1px;
         }
+
         nav a {
             color: #9ca3af;
             text-decoration: none;
@@ -41,9 +46,12 @@
             transition: color 0.2s;
             font-size: 0.9rem;
         }
-        nav a:hover, nav a.active {
+
+        nav a:hover,
+        nav a.active {
             color: #3b82f6;
         }
+
         main {
             flex: 1;
             max-width: 900px;
@@ -52,12 +60,14 @@
             padding: 50px 20px;
             position: relative;
         }
+
         h1 {
             font-size: 2.2rem;
             color: #ffffff;
             margin-bottom: 30px;
             text-align: center;
         }
+
         .intro-text {
             text-align: center;
             font-size: 0.9rem;
@@ -68,12 +78,14 @@
             border-radius: 6px;
             border: 1px solid #1f2937;
         }
+
         .grid-buttons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
         }
+
         .btn {
             background: #111827;
             color: #e5e7eb;
@@ -85,11 +97,13 @@
             font-size: 0.9rem;
             transition: all 0.2s;
         }
+
         .btn:hover {
             background: #1f2937;
             border-color: #3b82f6;
             color: #ffffff;
         }
+
         .section-title {
             font-size: 1rem;
             color: #6b7280;
@@ -99,6 +113,7 @@
             border-bottom: 1px solid #1f2937;
             padding-bottom: 5px;
         }
+
         .warning-footer {
             margin-top: 50px;
             text-align: center;
@@ -106,6 +121,7 @@
             color: #ef4444;
             font-weight: 700;
         }
+
         .top-secret-stamp {
             position: absolute;
             bottom: 20px;
@@ -121,6 +137,7 @@
             pointer-events: none;
             text-transform: uppercase;
         }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -130,6 +147,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -139,24 +157,28 @@
             <a href="links.html" class="active">Посилання</a>
             <a href="clearance.html">Відомості</a>
             <a href="archive.html">Архів</a>
+            <a href="bases.html">Бази</a>
         </nav>
     </header>
 
     <main>
         <h1>Посилання</h1>
-        
-        <div class="intro-text">
-            Якщо ви бажаєте підвищити свій рівень допуску або отримати доступ до інформації, скористайтесь посиланнями нижче.
+
+        <div class=" intro-text">
+            Якщо ви бажаєте підвищити свій рівень допуску або отримати доступ до інформації, скористайтесь
+            посиланнями
+            нижче.
         </div>
 
         <div class="grid-buttons">
-            <a href="#" class="btn">Доступ до файлів</a>
+            <a href="upgrade.html" class="btn">Доступ до файлів</a>
             <a href="clearance.html" class="btn">Підвищення рівня допуску</a>
         </div>
 
         <div class="section-title">Нові сайти</div>
         <div class="grid-buttons">
             <a href="networks.html" class="btn">Мережі 1</a>
+            <a href="bases.html" class="btn">Бази організації</a>
         </div>
 
         <div class="section-title">У розробці</div>
@@ -182,5 +204,8 @@
         Захищений вузол зв'язку №42.
     </footer>
 
+    <script src="auth.js"></script>
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: #0b0f19;
             color: #d1d5db;
@@ -21,6 +23,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         header {
             background: #111827;
             border-bottom: 1px solid #1f2937;
@@ -29,11 +32,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-weight: 700;
             color: #f3f4f6;
             letter-spacing: 1px;
         }
+
         nav a {
             color: #9ca3af;
             text-decoration: none;
@@ -41,9 +46,12 @@
             transition: color 0.2s;
             font-size: 0.9rem;
         }
-        nav a:hover, nav a.active {
+
+        nav a:hover,
+        nav a.active {
             color: #3b82f6;
         }
+
         main {
             flex: 1;
             max-width: 900px;
@@ -51,12 +59,14 @@
             margin: 0 auto;
             padding: 50px 20px;
         }
+
         h1 {
             font-size: 2.2rem;
             color: #ffffff;
             margin-bottom: 10px;
             text-align: center;
         }
+
         .sub-header {
             text-align: center;
             color: #3b82f6;
@@ -64,6 +74,7 @@
             margin-bottom: 40px;
             letter-spacing: 1px;
         }
+
         .section-title {
             font-size: 1rem;
             color: #6b7280;
@@ -73,6 +84,7 @@
             border-bottom: 1px solid #1f2937;
             padding-bottom: 5px;
         }
+
         .network-card {
             background: #111827;
             border: 1px solid #1f2937;
@@ -85,18 +97,22 @@
             align-items: center;
             gap: 20px;
         }
+
         .network-card:hover {
             border-color: #3b82f6;
         }
+
         .network-info h3 {
             color: #ffffff;
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
+
         .network-info p {
             color: #9ca3af;
             font-size: 0.85rem;
         }
+
         .btn {
             background: #1f2937;
             color: #e5e7eb;
@@ -109,11 +125,13 @@
             white-space: nowrap;
             transition: all 0.2s;
         }
+
         .btn:hover {
             background: #3b82f6;
             border-color: #3b82f6;
             color: #ffffff;
         }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -121,17 +139,20 @@
             color: #4b5563;
             border-top: 1px solid #1f2937;
         }
+
         @media (max-width: 600px) {
             .network-card {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .btn {
                 width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -141,6 +162,7 @@
             <a href="links.html">Посилання</a>
             <a href="clearance.html">Відомості</a>
             <a href="archive.html">Архів</a>
+            <a href="bases.html">Бази</a>
         </nav>
     </header>
 
@@ -155,7 +177,8 @@
                 <h3>Канал Steam</h3>
                 <p>Спеціалізована група учасників для відпочинку та позаштатних операцій.</p>
             </div>
-            <a href="steam.html" class="btn">Перейти до Steam</a>
+            <!-- Додаємо перевірку рівнів при кліку -->
+            <a href="#" onclick="checkNetworkAccess('steam.html', 2)" class="btn">Перейти до Steam</a>
         </div>
 
         <div class="network-card">
@@ -163,7 +186,7 @@
                 <h3>Телеграм-канали (4 вузли)</h3>
                 <p>Основні оперативні зведення, термінові новини та поточні завдання організації.</p>
             </div>
-            <a href="telegram.html" class="btn">Перейти до Telegram</a>
+            <a href="#" onclick="checkNetworkAccess('telegram.html', 2)" class="btn">Перейти до Telegram</a>
         </div>
 
         <div class="network-card">
@@ -171,7 +194,7 @@
                 <h3>Вайбер-групи (2 чати)</h3>
                 <p>Дублюючі канали зв'язку для новин та завдань (резервний частотний діапазон).</p>
             </div>
-            <a href="viber.html" class="btn">Перейти до Viber</a>
+            <a href="#" onclick="checkNetworkAccess('viber.html', 3)" class="btn">Перейти до Viber</a>
         </div>
     </main>
 
@@ -179,5 +202,8 @@
         Маршрутизація вузлів активна. Моніторинг захищено.
     </footer>
 
+    <script src="auth.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підвищення допуску // Таємниці Світу</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #d1d5db;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: #f3f4f6;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+        }
+
+        main {
+            flex: 1;
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sub-header {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .terminal-box {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .current-status {
+            background: #0b0f19;
+            border: 1px solid #1f2937;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .current-status span {
+            color: #3b82f6;
+            font-weight: 700;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            background: #0b0f19;
+            border: 1px solid #374151;
+            color: #ffffff;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #3b82f6;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #1f2937;
+            color: #ffffff;
+            border: 1px solid #3b82f6;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #3b82f6;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+        }
+
+        #response-msg {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            display: none;
+            text-align: center;
+        }
+
+        .msg-success {
+            background: rgba(6, 95, 70, 0.3);
+            border: 1px solid #065f46;
+            color: #a7f3d0;
+        }
+
+        .msg-error {
+            background: rgba(127, 29, 29, 0.3);
+            border: 1px solid #7f1d1d;
+            color: #fecaca;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #4b5563;
+            border-top: 1px solid #1f2937;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Організація</div>
+        <nav>
+            <a href="links.html">← Повернутися до Посилань</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Запит на Підвищення Допуску</h1>
+        <div class="sub-header">[ ПРОТОКОЛ ЕСКАЛАЦІЇ ПОВНОВАЖЕНЬ ]</div>
+
+        <div class="terminal-box">
+            <div class="current-status">
+                Поточний статус оперативника: <br>
+                Позивний: <span id="display-name">...</span> | Звання: <span id="display-rank">...</span><br>
+                Поточний допуск: <span id="display-level">...</span>
+            </div>
+
+            <!-- БЛОК 1: ДЛЯ LEVEL 1 (Введення ключа-коду) -->
+            <div id="section-level1" style="display: none;">
+                <div style="margin-bottom: 15px; font-size: 0.9rem; color: #e5e7eb;">
+                    🔑 <strong>РІВЕНЬ 1: Введення Ключа Ініціалізації</strong><br>
+                    <span style="color: #9ca3af; font-size: 0.83rem;">Введіть криптографічний код із телеграм-каналу або
+                        стартового протоколу:</span>
+                </div>
+                <input type="text" id="clearance-key" placeholder="Введіть код (наприклад: AGENT2026)"
+                    autocomplete="off">
+                <button class="btn-submit" onclick="verifyLevel1Key()">АКТИВУВАТИ КЛЮЧ ДОПУСКУ</button>
+            </div>
+
+            <!-- БЛОК 2: ДЛЯ LEVEL 2+ (Польовий звіт про виконання завдань) -->
+            <div id="section-level2" style="display: none;">
+                <div style="margin-bottom: 15px; font-size: 0.9rem; color: #e5e7eb;">
+                    📋 <strong>РІВЕНЬ 2+: Подання Польового Звіту</strong><br>
+                    <span style="color: #9ca3af; font-size: 0.83rem;">Для підвищення до Level 3/4 опишіть виконане
+                        завдання та додайте доказ:</span>
+                </div>
+                <input type="text" id="quest-title" placeholder="Назва виконаної місії / Квесту" autocomplete="off">
+                <textarea id="quest-proof"
+                    placeholder="Деталі виконання або посилання на докази (скріншот/повідомлення)..."></textarea>
+                <button class="btn-submit" onclick="submitFieldReport()">НАДІСЛАТИ ЗВІТ НА РОЗГЛЯД</button>
+            </div>
+
+            <div id="response-msg"></div>
+        </div>
+    </main>
+
+    <footer>
+        Система безпеки «Таємниці Світу». Перевірка протоколів активна.
+    </footer>
+
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const name = localStorage.getItem("tc_user_name") || "Гість";
+            const rank = localStorage.getItem("tc_user_rank") || "Спостерігач";
+            const level = parseInt(localStorage.getItem("tc_user_level") || "1");
+
+            document.getElementById("display-name").textContent = name;
+            document.getElementById("display-rank").textContent = rank;
+            document.getElementById("display-level").textContent = `Level ${level}`;
+
+            // Автоматичне перемикання блоків за рівнем
+            if (level === 1) {
+                document.getElementById("section-level1").style.display = "block";
+            } else {
+                document.getElementById("section-level2").style.display = "block";
+            }
+        });
+
+        // Секретні ключі для новачків (Level 1 -> Level 2)
+        const VALID_KEYS = {
+            "STALKER2026": { newLevel: 2, newRank: "Заслужений Сталкер", newClearance: "Level 2 // Restricted" }
+        };
+
+        function verifyLevel1Key() {
+            const keyInput = document.getElementById("clearance-key").value.trim().toUpperCase();
+            const msgBox = document.getElementById("response-msg");
+
+            if (VALID_KEYS[keyInput]) {
+                const upgradeData = VALID_KEYS[keyInput];
+                localStorage.setItem("tc_user_level", upgradeData.newLevel.toString());
+                localStorage.setItem("tc_user_rank", upgradeData.newRank);
+                localStorage.setItem("tc_user_clearance", upgradeData.newClearance);
+
+                msgBox.className = "msg-success";
+                msgBox.innerHTML = `[УСПІХ]: Допуск підвищено до Level ${upgradeData.newLevel}!<br>Ваше нове звання: ${upgradeData.newRank}. Оновлення...`;
+                msgBox.style.display = "block";
+
+                setTimeout(() => location.reload(), 2000);
+            } else {
+                msgBox.className = "msg-error";
+                msgBox.innerHTML = `[ПОМИЛКА]: Невірний код допуску. Шукайте ключі у нашому Telegram-каналі!`;
+                msgBox.style.display = "block";
+            }
+        }
+
+        function submitFieldReport() {
+            const title = document.getElementById("quest-title").value.trim();
+            const proof = document.getElementById("quest-proof").value.trim();
+            const msgBox = document.getElementById("response-msg");
+
+            if (!title || !proof) {
+                msgBox.className = "msg-error";
+                msgBox.innerHTML = `[ПОМИЛКА]: Заповніть назву місії та докази виконання!`;
+                msgBox.style.display = "block";
+                return;
+            }
+
+            msgBox.className = "msg-success";
+            msgBox.innerHTML = `[ОБРОБКА]: Звіт про «${title}» надіслано штабу.<br>Автоматична валідація... Рівень допуску підвищено до Level 3!`;
+            msgBox.style.display = "block";
+
+            setTimeout(() => {
+                localStorage.setItem("tc_user_level", "3");
+                localStorage.setItem("tc_user_rank", "Спеціаліст безпеки");
+                localStorage.setItem("tc_user_clearance", "Level 3 // Confidential");
+                location.reload();
+            }, 2500);
+        }
+    </script>
+</body>
+
+</html>
