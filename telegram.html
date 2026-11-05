@@ -203,6 +203,18 @@
     </footer>
 
     <script src="auth.js"></script>
+    <script>
+        // Захист прямого доступу до сторінки за рівнями
+        document.addEventListener("DOMContentLoaded", () => {
+            const requiredLevel = 2; // Змінюй цифру в залежності від сторінки (2 для Steam/Telegram, 3 для Viber тощо)
+            const userLevel = parseInt(localStorage.getItem("tc_user_level") || "1");
+
+            if (userLevel < requiredLevel) {
+                alert(`[ПОМИЛКА БЕЗПЕКИ]: Доступ заборонено!\nПотрібен мінімальний рівень допуску: Level ${requiredLevel}.\nВаш поточний рівень: Level ${userLevel}.`);
+                window.location.href = "networks.html"; // Повертаємо у хаб
+            }
+        });
+    </script>
 
 </body>
 
