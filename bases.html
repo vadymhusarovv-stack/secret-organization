@@ -179,12 +179,11 @@
         <h1>Мережа Стратегічних Баз</h1>
         <div class="sub-header">[ ЗАСЕКРЕЧЕНІ ОБ'ЄКТИ ТА АВАНПОСТИ ОРГАНІЗАЦІЇ ]</div>
 
-        <!-- Об'єкт 1 (Доступно з Level 1) -->
+        <!-- Об'єкт 1 (Level 1) -->
         <div class="base-card" onclick="openBaseDetails('BASE_01', 1)">
             <div class="base-info">
                 <h3>Об'єкт-01 // Центральний Бункер Ядра</h3>
-                <p>Головний координаційний центр організації. Звідси здійснюється управління протоколами безпеки та
-                    розподіл завдань.</p>
+                <p>Головний координаційний центр організації. Управління протоколами безпеки та розподіл завдань.</p>
                 <div class="base-meta">
                     <span>Сектор: <strong>Альфа</strong></span>
                     <span>Допуск: <strong>Level 1+</strong></span>
@@ -193,12 +192,11 @@
             <span class="status-badge st-active">АКТИВНИЙ</span>
         </div>
 
-        <!-- Об'єкт 2 (Доступно з Level 2) -->
+        <!-- Об'єкт 2 (Level 2) -->
         <div class="base-card" onclick="openBaseDetails('BASE_12', 2)">
             <div class="base-info">
                 <h3>Об'єкт-12 // Дослідний Полігон Аномалій</h3>
-                <p>Віддалена наукова станція. Проводяться польові випробування захисного обладнання та сканування
-                    простору.</p>
+                <p>Віддалена наукова станція. Польові випробування захисного обладнання та сканування простору.</p>
                 <div class="base-meta">
                     <span>Сектор: <strong>Бета (Зона)</strong></span>
                     <span>Допуск: <strong>Level 2+</strong></span>
@@ -207,12 +205,51 @@
             <span class="status-badge st-danger">ПІД ЗАГРОЗОЮ</span>
         </div>
 
-        <!-- Об'єкт 3 (Доступно тільки з Level 4) -->
+        <!-- Об'єкт 3 (Level 2) - Новий: Атлантис -->
+        <div class="base-card" onclick="openBaseDetails('BASE_ATLANTIS', 2)">
+            <div class="base-info">
+                <h3>Об'єкт-07 // Підводна Станція «Атлантис»</h3>
+                <p>Глибоководний комплекс у нейтральних водах. Дослідження морських аномалій та закритих частот зв'язку.
+                </p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Гамма (Океан)</strong></span>
+                    <span>Допуск: <strong>Level 2+</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-active">АКТИВНИЙ</span>
+        </div>
+
+        <!-- Об'єкт 4 (Level 3) - Новий: Полярний сектор -->
+        <div class="base-card" onclick="openBaseDetails('BASE_POLAR', 3)">
+            <div class="base-info">
+                <h3>Об'єкт-19 // Полярний Сектор «Аврора»</h3>
+                <p>Арктичний форпост. Ізольована зона для утримання артефактів та захисту від радіомагнітних бур.</p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Арктика</strong></span>
+                    <span>Допуск: <strong>Level 3+</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-active">АКТИВНИЙ</span>
+        </div>
+
+        <!-- Об'єкт 5 (Level 3) - Новий: Енігма -->
+        <div class="base-card" onclick="openBaseDetails('BASE_ENIGMA', 3)">
+            <div class="base-info">
+                <h3>Об'єкт-33 // Шифрувальна Лабораторія «Енігма»</h3>
+                <p>Підземний центр криптографії та дешифрування перехоплених протоколів невідомого походження.</p>
+                <div class="base-meta">
+                    <span>Сектор: <strong>Дельта</strong></span>
+                    <span>Допуск: <strong>Level 3+</strong></span>
+                </div>
+            </div>
+            <span class="status-badge st-danger">ШИФРУВАННЯ ЗБОЇТЬ</span>
+        </div>
+
+        <!-- Об'єкт 6 (Level 4) -->
         <div class="base-card" onclick="openBaseDetails('BASE_42', 4)">
             <div class="base-info">
-                <h3>Об'єкт-42 // Резервний Вузол зв'язку</h3>
-                <p>Законсервований об'єкт глибокого занурення. Використовується для екстреного дублювання каналів та
-                    шифрів.</p>
+                <h3>Об'єкт-42 // Резервний Вузол зв'язку Омега</h3>
+                <p>Законсервований об'єкт глибокого занурення. Зберігання повних зашифрованих копій архіву.</p>
                 <div class="base-meta">
                     <span>Сектор: <strong>Омега</strong></span>
                     <span>Допуск: <strong>Level 4</strong></span>
@@ -223,7 +260,7 @@
 
     </main>
 
-    <!-- Модальне вікно для перегляду бази даних та фото -->
+    <!-- Модальне вікно -->
     <div id="base-modal"
         style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(6px); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
         <div
@@ -246,17 +283,31 @@
 
     <script src="auth.js"></script>
     <script>
-        // База даних інформації про об'єкти та фотографії
         const BASES_DATABASE = {
             "BASE_01": {
                 title: "ОБ'ЄКТ-01 // ЦЕНТРАЛЬНИЙ БУНКЕР",
                 text: "Координаційний центр організації. Забезпечує стабільність каналів зв'язку та моніторинг активності всіх оперативників у реальному часі.",
-                image: "images/base_01.png" // Заміниш на своє фото, коли з'явиться
+                image: "images/base_01.png"
             },
             "BASE_12": {
                 title: "ОБ'ЄКТ-12 // ПОЛІГОН АНОМАЛІЙ",
                 text: "Секретний науковий аванпост. Зафіксовано високий рівень енергетичних коливань. Доступ дозволено лише перевіреним аналітикам.",
                 image: "images/base_12.png"
+            },
+            "BASE_ATLANTIS": {
+                title: "ОБ'ЄКТ-07 // ПІДВОДНА СТАНЦІЯ «АТЛАНТИС»",
+                text: "Ізольований підводний комплекс. Використовується для моніторингу глибинних аномалій та прихованих хвиль передачі даних.",
+                image: "images/base_atlantis.jpg"
+            },
+            "BASE_POLAR": {
+                title: "ОБ'ЄКТ-19 // ПОЛЯРНИЙ СЕКТОР «АВРОРА»",
+                text: "Арктична база спостереження. Завдяки природній ізоляції тут проводяться найчутливіші експерименти з безпеки мережі.",
+                image: "images/base_polar.jpg"
+            },
+            "BASE_ENIGMA": {
+                title: "ОБ'ЄКТ-33 // ЛАБОРАТОРІЯ КРИПТОГРАФІЇ «ЕНІГМА»",
+                text: "Спеціалізований вузол дешифрування. Названий на честь історичних машин кодування. Тут ламаються будь-які захисні протоколи сторонніх спостерігачів.",
+                image: "images/base_enigma.png"
             },
             "BASE_42": {
                 title: "ОБ'ЄКТ-42 // РЕЗЕРВНИЙ БУНКЕР ОМЕГА",

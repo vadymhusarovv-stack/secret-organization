@@ -6,7 +6,8 @@
 const USERS_DATABASE = {
     "vadym": { pass: "1234", name: "Вадим", rank: "Генерал Армії", clearance: "Level 4 // Top Secret", level: 4 },
     "captain": { pass: "7777", name: "Олексій", rank: "Капітан", clearance: "Level 3 // Confidential", level: 3 },
-    "stalker": { pass: "2026", name: "Тінь", rank: "Заслужений Сталкер", clearance: "Level 2 // Restricted", level: 2 }
+    "stalker": { pass: "2026", name: "Тінь", rank: "Заслужений Сталкер", clearance: "Level 2 // Restricted", level: 2 },
+    "prof_olena": { pass: "password123", name: "Олена", rank: "Професор", clearance: "Level 4 // Top Secret", level: 4 }
 };
 
 const SESSION_TIMEOUT_MS = 10 * 60 * 1000; // 10 хвилин у мілісекундах
